@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c0d0e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Codex Meter" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Codex Meter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="stylesheet" href="/styles.css?v=3" />
+  </head>
+  <body data-ui>
+    <main class="dashboard">
+      <aside class="identity-panel">
+        <header class="brand-row">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="11.5" />
+            <path d="M16 4.5a11.5 11.5 0 1 1-10.8 7.6" />
+          </svg>
+          <span>Codex Meter</span>
+        </header>
+        <div class="identity-content">
+          <p class="identity-kicker">Seu espaço</p>
+          <p class="identity-heading">Codex,<br />em foco.</p>
+          <p class="identity-copy">Acompanhe seus limites e o ritmo da semana.</p>
+        </div>
+      </aside>
+
+      <section class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Visão geral</p>
+            <h1>Consumo</h1>
+          </div>
+          <button id="refreshButton" class="icon-button" type="button" aria-label="Atualizar dados">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11a8.1 8.1 0 1 0-2.3 5.7M20 4v7h-7" />
+          </svg>
+          </button>
+        </header>
+
+        <div class="status-row" aria-live="polite">
+          <span class="connection-state">
+            <span id="liveDot" class="live-dot"></span>
+            <span id="statusText">Conectando ao Codex…</span>
+          </span>
+          <span class="plan-label"><span class="plan-caption">Plano</span> <span id="planBadge">—</span></span>
+        </div>
+
+      <section class="meter-card panel" aria-label="Limites de uso">
+        <article class="meter-block">
+          <div id="primaryRing" class="meter-ring">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="ring-track" cx="50" cy="50" r="44" />
+              <circle class="ring-value" cx="50" cy="50" r="44" />
+            </svg>
+            <div class="meter-inner">
+              <strong id="primaryValue">—</strong>
+              <span>usado</span>
+            </div>
+          </div>
+          <div class="meter-copy">
+            <h2 id="primaryLabel">5 horas</h2>
+            <p id="primaryReset">Aguardando dados</p>
+          </div>
+        </article>
+
+        <div class="meter-divider" aria-hidden="true"></div>
+
+        <article class="meter-block">
+          <div id="weeklyRing" class="meter-ring">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="ring-track" cx="50" cy="50" r="44" />
+              <circle class="ring-value" cx="50" cy="50" r="44" />
+            </svg>
+            <div class="meter-inner">
+              <strong id="weeklyValue">—</strong>
+              <span>usado</span>
+            </div>
+          </div>
+          <div class="meter-copy">
+            <h2 id="weeklyLabel">Semanal</h2>
+            <p id="weeklyReset">Aguardando dados</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="today-card panel">
+        <div>
+          <p class="section-label">Hoje</p>
+          <p id="todayTokens" class="big-number">—</p>
+          <p class="muted">tokens processados</p>
+        </div>
+        <div class="today-stat">
+          <span id="todayShare">—</span>
+          <small>do pico diário</small>
+        </div>
+      </section>
+
+      <section class="week-card panel">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Últimos 7 dias</p>
+            <h2>Atividade diária</h2>
+          </div>
+          <p id="weekTotal" class="week-total">—</p>
+        </div>
+        <div id="weekChart" class="week-chart" aria-label="Uso diário dos últimos sete dias"></div>
+      </section>
+
+      <footer>
+        <p id="updatedAt">Ainda não atualizado</p>
+        <p class="privacy-note">Dados lidos localmente do Codex no seu PC.</p>
+      </footer>
+      </section>
+    </main>
+
+    <section id="keySheet" class="key-sheet" hidden>
+      <form id="keyForm" class="sheet-card">
+        <div class="sheet-handle"></div>
+        <p class="section-label">Conexão segura</p>
+        <h2>Digite a chave exibida no PC</h2>
+        <p>A chave fica salva somente neste aparelho.</p>
+        <label>
+          Chave de acesso
+          <input id="keyInput" type="password" autocomplete="one-time-code" required />
+        </label>
+        <button class="primary-button" type="submit">Conectar</button>
+      </form>
+    </section>
+
+    <script type="module" src="/app.js?v=2"></script>
+  </body>
+</html>

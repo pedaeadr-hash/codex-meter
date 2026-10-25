@@ -1,0 +1,10 @@
+.codex-meter-key
+.env
+.env.*
+!.env.example
+node_modules/
+*.log
+graphify-out/
+.taste-skill/
+.DS_Store
+Thumbs.db

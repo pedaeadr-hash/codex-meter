@@ -96,4 +96,3 @@ npm test
 ## Licença
 
 MIT. Consulte [`LICENSE`](LICENSE).
-

@@ -1,0 +1,13 @@
+{
+  "name": "codex-meter",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Painel local e instalavel para acompanhar o uso do Codex no iPhone.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
